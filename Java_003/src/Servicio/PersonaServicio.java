@@ -84,30 +84,30 @@ public class PersonaServicio {
         while (var == false) {
             boolean aux = false;
             for (int i = 0; i < nombre.length(); i++) {
-                if (nombre.substring(i, i + 1).equals(" ")) {
+                if (!nombre.substring(i, i + 1).equals(" ")) {
                     aux = true;
                 }
             }
-            if (nombre.isEmpty() || aux == true) {
-                System.out.println("Error. Ingrese un nombre válido: ");
+            if (aux == false) {
+                System.out.println("Error. Ingrese una nuevo nombre: ");
                 nombre = leer.nextLine();
             } else {
-                var = true; // Rompemos el bucle principal
+                var = true;
             }
         }
         return nombre;
     }
-    
-    public char ComprobarChar(){
+
+    public char ComprobarChar() {
         Scanner leer = new Scanner(System.in);
-        char aux= leer.next().charAt(0);
-        boolean var= false;
-        while (var==false){
-            if ((aux!='M' && aux!='O' && aux!='F' && aux!='m' && aux!='o' && aux!='f')) {
+        char aux = leer.next().charAt(0);
+        boolean var = false;
+        while (var == false) {
+            if ((aux != 'M' && aux != 'O' && aux != 'F' && aux != 'm' && aux != 'o' && aux != 'f')) {
                 System.out.println("Error. Ingrese un caráter válido: ");
-                aux= leer.next().charAt(0);
+                aux = leer.next().charAt(0);
             } else {
-                var= true;
+                var = true;
             }
         }
         return aux;

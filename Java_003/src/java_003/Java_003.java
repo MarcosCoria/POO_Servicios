@@ -36,7 +36,6 @@ package java_003;
 
 import Entidad.Persona;
 import Servicio.PersonaServicio;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /* @author G96xyFast */
@@ -45,7 +44,6 @@ public class Java_003 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         PersonaServicio serv = new PersonaServicio();
-        ArrayList<Persona> lista = new ArrayList();
         System.out.println("Ingrese cantidad de personas: ");
         int cant = leer.nextInt();
         while (cant <= 0) {
@@ -81,7 +79,6 @@ public class Java_003 {
                     System.out.println("No es mayor de edad");
                     menor++;
             }
-            lista.add(aux);
         }
         System.out.println("Porcentaj peso bajo: " + (cont1*100)/cant);
         System.out.println("Porcentaj peso ideal: " + (cont2*100)/cant);
